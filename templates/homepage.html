@@ -1,0 +1,265 @@
+<html>
+
+<head>
+
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script>
+    $(document).ready(function () {
+      $("#movie_schedule").DataTable();
+    });
+  </script>
+
+  <base target="_parent" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" />
+  <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB5-Free_6.3.1/css/mdb.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      background-color: #fbfbfb;
+    }
+
+    @media (min-width: 991.98px) {
+      main {
+        padding-left: 240px;
+      }
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      padding: 58px 0 0;
+      /* Height of navbar */
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+      width: 240px;
+      z-index: 600;
+    }
+
+    @media (max-width: 991.98px) {
+      .sidebar {
+        width: 100%;
+      }
+    }
+
+    .sidebar .active {
+      border-radius: 5px;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    }
+
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 48px);
+      padding-top: 0.5rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+      /* Scrollable contents if viewport is shorter than content. */
+    }
+  </style>
+  <style>
+    INPUT:-webkit-autofill,
+    SELECT:-webkit-autofill,
+    TEXTAREA:-webkit-autofill {
+      animation-name: onautofillstart;
+    }
+
+    INPUT:not(:-webkit-autofill),
+    SELECT:not(:-webkit-autofill),
+    TEXTAREA:not(:-webkit-autofill) {
+      animation-name: onautofillcancel;
+    }
+
+    @keyframes onautofillstart {}
+
+    @keyframes onautofillcancel {}
+  </style>
+</head>
+
+<body class="vsc-initialized">
+
+  <!--Main Navigation-->
+  <header>
+  
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="/staff/home">
+          <img src="/static/img/Logo/logonav.png" height="25" alt="" loading="lazy" />
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+          <!-- Avatar -->
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
+                alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="{{url_for('profile')}}">{{username}}</a></li>
+              <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+  
+  <script type="text/javascript"
+    src="https://mdbootstrap.com/api/snippets/static/download/MDB5-Free_6.3.1/js/mdb.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+  {% if linePlot_xArray != None %}
+
+  {% for result_min_max in result_min_maxs %}
+  <script>
+    // Min_Price ,Max_Price ,Min_Transaction_Time ,Max_Transaction_Time
+    // X = Time Y = Price
+    const linePlot_xArray = JSON.parse('{{ linePlot_xArray | safe }}');
+    const linePlot_yArray = JSON.parse('{{ linePlot_yArray | safe }}');
+
+    const Min_Price = "{{ result_min_max[0] }}";
+    const Max_Price = "{{ result_min_max[1] }}";
+    const Min_Transaction_Time = "{{ result_min_max[2] }}";
+    const Max_Transaction_Time = "{{ result_min_max[3] }}";
+
+    // Define Data
+    const linePlot_data = [{
+      x: linePlot_xArray,
+      y: linePlot_yArray,
+      mode: "lines"
+    }];
+
+    // Define Layout
+    const linePlot_layout = {
+      xaxis: { range: [Min_Transaction_Time, Max_Transaction_Time], title: "Time" },
+      yaxis: { range: [Min_Price, Max_Price], title: "Price" },
+      title: "Sales Ticket "
+    };
+
+    // Display using Plotly
+    Plotly.newPlot("linePlot", linePlot_data, linePlot_layout);
+  </script>
+  {% endfor %}
+  {% else %}
+  <script>
+    // Define Data
+    const linePlot_no_data = [{
+      x: [],
+      y: [],
+      mode: "lines"
+    }];
+
+    // Define Layout
+    const linePlot_layout_no_data = {
+      xaxis: { range: [0, 24], title: "Time" },
+      yaxis: { range: [0, 500], title: "Price" },
+      title: "Sales Ticket "
+    };
+
+    // Display using Plotly
+    Plotly.newPlot("linePlot", linePlot_no_data, linePlot_layout_no_data);
+
+  </script>
+  {% endif %}
+
+  
+  {% if barPlot_xArray != None %}
+  <script>
+    // Parse the JSON strings into arrays
+    const barPlot_xArray = JSON.parse('{{ barPlot_xArray_json | safe }}');
+    const barPlot_yArray = JSON.parse('{{ barPlot_yArray_json | safe }}');
+  
+    // Define the data and layout for the bar plot
+    const barPlot_data = [{
+      x: barPlot_xArray,
+      y: barPlot_yArray,
+      type: "bar",
+      marker: { color: "rgba(102, 102, 153, 0.6)" }
+    }];
+    const barPlot_layout = { title: "Top 5 Ticket Sold" };
+  
+    // Create the bar plot using Plotly.newPlot
+    Plotly.newPlot("barPlot", barPlot_data, barPlot_layout);
+  </script>
+  {% else %}
+  <script>
+    // Define empty arrays for no data
+    const barPlot_xArray_no_data = [];
+    const barPlot_yArray_no_data = [];
+  
+    // Define the data and layout for the empty bar plot
+    const barPlot_data_no_data = [{
+      x: barPlot_xArray_no_data,
+      y: barPlot_yArray_no_data,
+      type: "bar",
+      marker: { color: "rgba(102, 102, 153, 0.6)" }
+    }];
+    const barPlot_layout_no_data = { title: "Top 5 Ticket Sold" };
+  
+    // Create the empty bar plot using Plotly.newPlot
+    Plotly.newPlot("barPlot", barPlot_data_no_data, barPlot_layout_no_data);
+  </script>
+  {% endif %}
+  
+
+<br>
+<br>
+<script>
+  var donutPlot_xArray = JSON.parse('{{ donutPlot_xArray_json | safe }}');
+  var donutPlot_yArray = JSON.parse('{{ donutPlot_yArray_json | safe }}');
+  var donutPlot_layout = { title: "Top 5 Food Sold" };
+  var donutPlot_data = [];
+
+  if (donutPlot_xArray !== null && donutPlot_yArray !== null) {
+    donutPlot_data = [
+      {
+        labels: donutPlot_xArray,
+        values: donutPlot_yArray,
+        hole: 0.4,
+        type: "pie"
+      }
+    ];
+  }
+  Plotly.newPlot("donutPlot", donutPlot_data, donutPlot_layout);
+</script>
+
+
+</body>
+
+</html>

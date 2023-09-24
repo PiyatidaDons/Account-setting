@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <title>Staff Login - BigDeal Cinema</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+}
+
+.container {
+    margin: 50px auto;
+}
+
+.body {
+    position: relative;
+    width: 720px;
+    height: 440px;
+    margin: 10% auto;
+    border: 1px solid #dddd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.box-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-2 {
+    padding: 10px;
+}
+
+.box-1,
+.box-2 {
+    width: 50%;
+}
+
+.h-1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.text-muted {
+    font-size: 14px;
+}
+
+.container .box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    text-decoration: none;
+    color: #615f5fdd;
+}
+
+.box:active,
+.box:visited {
+    border: 2px solid #ee82ee;
+}
+
+.box:hover {
+    border: 2px solid #ee82ee;
+}
+
+.btn.btn-primary {
+    margin-top: 5%;
+    font-size: 14px;
+}
+
+.btn.btn-primary .fas.fa-chevron-right {
+    font-size: 12px;
+}
+
+.footer .p-color {
+    color: #ee82ee;
+}
+
+.footer.text-muted {
+    font-size: 10px;
+}
+
+.fas.fa-times {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    background-color: #f3cff379;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fas.fa-times:hover {
+    color: #ff0000;
+}
+
+@media (max-width:767px) {
+    body {
+        padding: 10px;
+    }
+
+    .body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box-1 {
+        width: 100%;
+    }
+
+    .box-2 {
+        width: 100%;
+        height: 440px;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container-lg">
+            <div class="body d-md-flex align-items-center justify-content-between">
+                <div class="box-1 mt-md-0 mt-5">
+                    <img src="https://www.engtest.net/UserFiles/Image/25782572575785785757575/cinema-Maroc.jpg"
+                        class="" alt="BigDeal Cinema">
+                </div>
+                <div class=" box-2 d-flex flex-column h-100">
+
+                    
+                    
+
+                    <form action="{{ url_for('login') }}" method="POST" id="loginForm">
+                        <div class="mt-5">
+                          <p class="mb-1 h-1">Staff Login</p>
+                          <p class="text-muted mb-2">BigDeal Cinema</p>
+                          <div class="d-flex flex-column">
+                            <div class="form-floating mb-3">
+                              <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                              <label for="floatingInput">Username</label>
+                            </div>
+                            <div class="form-floating">
+                              <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                              <label for="floatingPassword">Password</label>
+                            </div>
+                          </div>
+                          <div class="d-grid gap-2">
+                            <button type="submit" value="login" class="btn btn-primary">Log in<span class="fas fa-chevron-right ms-1"></span></button>
+                          </div>
+                        </div>
+                      </form>
+                    <div class="mt-auto">
+                        <p class="footer text-muted mb-0 mt-md-0 mt-4">หากพบปัญหาในการล็อกอินให้ทำการติดต่อ 
+                            <span class="p-color ms-1">Manager</span>
+                        </p>
+                    </div>
+                
+                </div>
+            
+            </div>
+        </div>
+    </body>
+</html>
